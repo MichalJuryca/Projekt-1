@@ -83,30 +83,8 @@ else:
 
 
 
-# uzivatele = {
-#     "uzivatel1": "heslo1",
-#     "uzivatel2": "heslo2",
-#     "uzivatel3": "heslo3"
-# }
 
-# def over_uzivatele(zadane_jmeno, zadane_heslo):
-#     if zadane_jmeno in uzivatele and uzivatele[zadane_jmeno] == zadane_heslo:
-#         print("Přihlášení úspěšné!")
-#         return True
-#     else:
-#         print("Neplatné jméno nebo heslo.")
-#         return False
 
-# # Testování
-# zadane_jmeno = input("Zadejte uživatelské jméno: ")
-# zadane_heslo = input("Zadejte heslo: ")
-
-# if over_uzivatele(zadane_jmeno, zadane_heslo):
-#     # Kód pro případ úspěšného přihlášení
-#     print("Vítejte v aplikaci!")
-# else:
-#     # Kód pro případ neúspěšného přihlášení
-#     print("Zkuste to znovu.")
 
 
 
