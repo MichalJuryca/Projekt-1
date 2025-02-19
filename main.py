@@ -65,21 +65,35 @@ zadane_jmeno = input("Zadejte jméno: ")
 zadane_heslo = input("Zadejte heslo: ")
 
 if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v proměnné z_j je v uživatelech a v uživatelech [v klíči z_j] to se rovná zadané heslo
-    print("Ahoj", zadane_jmeno.capitalize(), "!")
+    print("Vítej v aplikaci, ", zadane_jmeno.capitalize(), "!")
+    číslo = int(input("Který odstavec ze 3 si přejete analyzovat? Zadejte číslo od 1 do 3.\n"))
 
-    odstavec1 = TEXTS[0] 
-    odstavec2 = TEXTS[1] 
-    odstavec3 = TEXTS[2] 
+    if 1 <= číslo <= 3:
+        vybrany_odstavec = TEXTS[číslo - 1]
+        print(vybrany_odstavec)# tady budu dávat statistiky
 
-    číslo = int(input("Zadej číslo odstavce od 0 do 2\n"))
-    if číslo == 0:
-        print(odstavec1)
-    elif číslo == 1:
-        print(odstavec2)
-    elif číslo == 2:
-        print(odstavec3)
     else:
         print("Toto číslo není v zadání")
+# odstavec1 = TEXTS[0] 
+    # odstavec2 = TEXTS[1] 
+    # odstavec3 = TEXTS[2] 
+    # TEXTS = 0
+    # if TEXTS == 0:
+    #     TEXTS = 1
+    # elif TEXTS == 1:
+    #     TEXTS = 2
+    # elif TEXTS == 2:
+    #     TEXTS = 3
+
+    # číslo = int(input("Který odstavec ze 3 si přejete analyzovat? Zadej číslo od 1 do 3\n"))
+    # if číslo == 1:
+    #     print(odstavec1) #tady budu dávat další kod, který bude tisknout statistiky.
+    # elif číslo == 2:
+    #     print(odstavec2)
+    # elif číslo == 3:
+    #     print(odstavec3)
+    # else:
+    #     print("Toto číslo není v zadání")
 
 
     
@@ -89,40 +103,10 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
     
 
         
-        
-        
-
-    
-    
-    
- 
-        
-        
-
-
-    
-    
-   
-           
-   
-    
-    
-    
-        
-        
-    
-        
-        
-
-    
-        
-        
-        
-
         
 else:
     print("Neplatné jméno nebo heslo.")
-    # Zde může následovat kód pro případ neúspěšného přihlášení
+    # Zde musí následovat kod se špatně zadanýma informacema. 
 
 
 
