@@ -54,9 +54,9 @@ TEXTS = [
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
-
-print("Vítejte v programu textový analyzátor, zadejte přihlašovací jmméno a heslo\n")
-print("-" * 30) 
+print("-" * 75)
+print("Vítejte v programu textový analyzátor, zadejte přihlašovací jmméno a heslo")
+print("-" * 75) 
 users = {"bob": "123",
         "ann": "pass123",
         "mike": "password123",
@@ -64,8 +64,8 @@ users = {"bob": "123",
 zadane_jmeno = input("Zadejte jméno: ")
 zadane_heslo = input("Zadejte heslo: ")
 
-if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:
-    print("Přihlášení úspěšné!")
+if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v proměnné z_j je v uživatelech a v uživatelech [v klíči z_j] to se rovná zadané heslo
+    print("Ahoj", zadane_jmeno.capitalize(), "!")
     # Zde může následovat kód pro případ úspěšného přihlášení
 else:
     print("Neplatné jméno nebo heslo.")
