@@ -1,3 +1,26 @@
+# Program bude obsahovat
+# 1) vyžádání si od uživatele přihlašovací jméno a heslo
+# 2) zjistí, jestli zadané údaje odpovídají někomu z registrovaných uživatelů
+# 3) pokud je registrovaný, pozdraví jej a umožní mu analyzovat texty
+# 4) pokud není registrovaný, upozorní jej a ukončí program
+# 5) registrovaní uživatelé
+# user  password
+
+# bob   123
+# ann   pass123
+# mike  password123
+# liz   pass123
+
+# 6) pokud uživatel vybere takové číslo textu, které není v zadání, 
+#    program jej upozorní a skončí
+# 7) pokud program zadá jiný vstup než číslo, program jej rovněž upozorní 
+#    a skončí
+# 8) statistiky - počet slov začínajících velkým písmenem
+#               - počet slov psaných velkými písmeny
+#               - počet slov psaných malými písmeny
+#               - počet čísel(ne cifer)
+#               - sumu všech čísel(ne cifer) v textu
+
 """
 projekt_1.py: první projekt do Engeto Online Python Akademie
 
@@ -31,4 +54,5 @@ TEXTS = [
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
+
 
