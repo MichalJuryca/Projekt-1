@@ -54,9 +54,10 @@ TEXTS = [   #datový typ list
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
-print("-" * 75)
+čára = ("-" * 75)
+print(čára)
 print("Vítejte v programu textový analyzátor, zadejte přihlašovací jmméno a heslo")
-print("-" * 75) 
+print(čára) 
 users = {"bob": "123",
         "ann": "pass123",
         "mike": "password123",
@@ -66,7 +67,9 @@ zadane_heslo = input("Zadejte heslo: ")
 
 if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v proměnné z_j je v uživatelech a v uživatelech [v klíči z_j] to se rovná zadané heslo
     print("Vítej v aplikaci, ", zadane_jmeno.capitalize(), "!")
+    print(čára)
     číslo = int(input("Který odstavec ze 3 si přejete analyzovat? Zadejte číslo od 1 do 3.\n"))
+    print(čára)
 
     if 1 <= číslo <= 3:
         vybrany_odstavec = TEXTS[číslo - 1]
