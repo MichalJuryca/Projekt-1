@@ -27,7 +27,7 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Michal Juryca
 email: adruj@seznam.cz
 """
-TEXTS = [
+TEXTS = [   #datový typ list
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
     topographic feature that rises sharply
@@ -66,7 +66,60 @@ zadane_heslo = input("Zadejte heslo: ")
 
 if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v proměnné z_j je v uživatelech a v uživatelech [v klíči z_j] to se rovná zadané heslo
     print("Ahoj", zadane_jmeno.capitalize(), "!")
-    # Zde může následovat kód pro případ úspěšného přihlášení
+
+    odstavec1 = TEXTS[0] 
+    odstavec2 = TEXTS[1] 
+    odstavec3 = TEXTS[2] 
+
+    číslo = int(input("Zadej číslo odstavce od 0 do 2\n"))
+    if číslo == 0:
+        print(odstavec1)
+    elif číslo == 1:
+        print(odstavec2)
+    elif číslo == 2:
+        print(odstavec3)
+    else:
+        print("Toto číslo není v zadání")
+
+
+    
+    
+
+
+    
+
+        
+        
+        
+
+    
+    
+    
+ 
+        
+        
+
+
+    
+    
+   
+           
+   
+    
+    
+    
+        
+        
+    
+        
+        
+
+    
+        
+        
+        
+
+        
 else:
     print("Neplatné jméno nebo heslo.")
     # Zde může následovat kód pro případ neúspěšného přihlášení
