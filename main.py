@@ -27,7 +27,7 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Michal Juryca
 email: adruj@seznam.cz
 """
-TEXTS = [   #datový typ list
+TEXTS = [   #datový typ list(multi line string se třemi jednoduchými uvozovkami. Je tedy již rozdělený.)
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
     topographic feature that rises sharply
@@ -73,7 +73,15 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
 
     if 1 <= číslo <= 3:
         vybrany_odstavec = TEXTS[číslo - 1]
-        print(vybrany_odstavec)# tady budu dávat statistiky
+        pocet_slov = len(vybrany_odstavec.split())
+        print("Ve vybraným textu je:", pocet_slov, "slov.")
+
+        pocet_titlecase_slov = 0
+        for slovo in vybrany_odstavec.split():
+            if slovo[0].isupper():
+                pocet_titlecase_slov += 1
+        print("Z toho je:", pocet_titlecase_slov, "slov s prvním velkým písmenem.") 
+        #tady pokračuj
 
     else:
         print("Toto číslo není v zadání")
