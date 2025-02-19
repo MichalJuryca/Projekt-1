@@ -55,4 +55,58 @@ TEXTS = [
     garpike and stingray are also present.'''
 ]
 
+print("Vítejte v programu textový analyzátor, zadejte přihlašovací jmméno a heslo\n")
+print("-" * 30) 
+users = {"bob": "123",
+        "ann": "pass123",
+        "mike": "password123",
+        "liz": "pass123"}
+zadane_jmeno = input("Zadejte jméno: ")
+zadane_heslo = input("Zadejte heslo: ")
+
+if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:
+    print("Přihlášení úspěšné!")
+    # Zde může následovat kód pro případ úspěšného přihlášení
+else:
+    print("Neplatné jméno nebo heslo.")
+    # Zde může následovat kód pro případ neúspěšného přihlášení
+
+
+
+
+
+
+
+
+
+
+
+
+
+# uzivatele = {
+#     "uzivatel1": "heslo1",
+#     "uzivatel2": "heslo2",
+#     "uzivatel3": "heslo3"
+# }
+
+# def over_uzivatele(zadane_jmeno, zadane_heslo):
+#     if zadane_jmeno in uzivatele and uzivatele[zadane_jmeno] == zadane_heslo:
+#         print("Přihlášení úspěšné!")
+#         return True
+#     else:
+#         print("Neplatné jméno nebo heslo.")
+#         return False
+
+# # Testování
+# zadane_jmeno = input("Zadejte uživatelské jméno: ")
+# zadane_heslo = input("Zadejte heslo: ")
+
+# if over_uzivatele(zadane_jmeno, zadane_heslo):
+#     # Kód pro případ úspěšného přihlášení
+#     print("Vítejte v aplikaci!")
+# else:
+#     # Kód pro případ neúspěšného přihlášení
+#     print("Zkuste to znovu.")
+
+
 
