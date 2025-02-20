@@ -72,20 +72,27 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
     print(čára)
 
     if 1 <= číslo <= 3:
-        vybrany_odstavec = TEXTS[číslo - 1]
+        vybrany_odstavec = TEXTS[číslo - 1] #ovšření počtu slov v odstavci
         pocet_slov = len(vybrany_odstavec.split())
         print("Ve vybraným textu je:", pocet_slov, "slov.")
 
-        pocet_titlecase_slov = 0
+        pocet_titlecase_slov = 0 #ověření Velké počáteční písmeno v odstavci
         for slovo in vybrany_odstavec.split():
             if slovo[0].isupper():
                 pocet_titlecase_slov += 1
         print("Z toho je:           ", pocet_titlecase_slov, "slov s prvním velkým písmenem.") 
-        pocet_upercase_slov = 0
+        pocet_upercase_slov = 0 #ověření VELKÝCH slov v odstavci
         for slovo in vybrany_odstavec.split():
             if slovo.isupper() and slovo.isalpha():
                 pocet_upercase_slov += 1
-        print("Velká slova:         ", pocet_upercase_slov, "slov s velkými slovy")  
+        print("Z toho je:           ", pocet_upercase_slov, "slov s velkými slovy")  
+        pocet_lowercase_slov = 0 #ověření jen malých písmen
+        for slovo in vybrany_odstavec.split():
+            if slovo.islower() and slovo.isalpha():
+                pocet_lowercase_slov += 1
+        print("Z toho je:           ", pocet_lowercase_slov, "slov s malými písmeny")
+
+
 
     else:
         print("Toto číslo není v zadání")
