@@ -91,12 +91,11 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
             if slovo.islower(): #and slovo.isalpha(): #zatextováno, počítalo i číslice??
                 pocet_lowercase_slov += 1
         print("Z toho je:           ", pocet_lowercase_slov, "slov s malými písmeny.")
-        
-        pocet_isdigit_cisel = 0
+        pocet_isdigit_cisel = 0 #ověření počtu cifer v odstavci
         for slovo in vybrany_odstavec.split():
             if slovo.isdigit():
                 pocet_isdigit_cisel += 1
-            elif slovo == "US" and vybrany_odstavec.split()[vybrany_odstavec.split().index(slovo) + 1] == "30":
+            elif slovo == "US" and vybrany_odstavec.split()[vybrany_odstavec.split().index(slovo) + 1] == "30": #Tento řádek kódu kontroluje, zda je aktuální slovo "US" a zda je následující slovo "30". Pokud ano, znamená to, že se v textu nachází "US 30".
                 print("Z toho je:           ", pocet_isdigit_cisel, "čísel.")
                 
 
