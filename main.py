@@ -85,13 +85,26 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         for slovo in vybrany_odstavec.split():
             if slovo.isupper() and slovo.isalpha():
                 pocet_upercase_slov += 1
-        print("Z toho je:           ", pocet_upercase_slov, "slov s velkými slovy")  
+        print("Z toho je:           ", pocet_upercase_slov, "slov s velkými slovy.")  
         pocet_lowercase_slov = 0 #ověření jen malých písmen
         for slovo in vybrany_odstavec.split():
-            if slovo.islower() and slovo.isalpha():
+            if slovo.islower(): #and slovo.isalpha(): #zatextováno, počítalo i číslice??
                 pocet_lowercase_slov += 1
-        print("Z toho je:           ", pocet_lowercase_slov, "slov s malými písmeny")
+        print("Z toho je:           ", pocet_lowercase_slov, "slov s malými písmeny.")
+        
+        pocet_isdigit_cisel = 0
+        for slovo in vybrany_odstavec.split():
+            if slovo.isdigit():
+                pocet_isdigit_cisel += 1
+            elif slovo == "US" and vybrany_odstavec.split()[vybrany_odstavec.split().index(slovo) + 1] == "30":
+                print("Z toho je:           ", pocet_isdigit_cisel, "čísel.")
+                
 
+        
+        
+        
+                
+        
 
 
     else:
