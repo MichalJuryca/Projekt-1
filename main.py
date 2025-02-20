@@ -88,7 +88,7 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         print("Z toho je:           ", pocet_upercase_slov, "slov s velkými slovy.")  
         pocet_lowercase_slov = 0 #ověření jen malých písmen
         for slovo in vybrany_odstavec.split():
-            if slovo.islower(): #and slovo.isalpha(): #zatextováno, počítalo i číslice??
+            if slovo.islower(): #and slovo.isalpha(): #zatextováno, počítalo i číslice.
                 pocet_lowercase_slov += 1
         print("Z toho je:           ", pocet_lowercase_slov, "slov s malými písmeny.")
         pocet_isdigit_cisel = 0 #ověření počtu cifer v odstavci
