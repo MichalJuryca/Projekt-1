@@ -80,8 +80,12 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         for slovo in vybrany_odstavec.split():
             if slovo[0].isupper():
                 pocet_titlecase_slov += 1
-        print("Z toho je:", pocet_titlecase_slov, "slov s prvním velkým písmenem.") 
-        #tady pokračuj
+        print("Z toho je:           ", pocet_titlecase_slov, "slov s prvním velkým písmenem.") 
+        pocet_upercase_slov = 0
+        for slovo in vybrany_odstavec.split():
+            if slovo.isupper() and slovo.isalpha():
+                pocet_upercase_slov += 1
+        print("Velká slova:         ", pocet_upercase_slov, "slov s velkými slovy")  
 
     else:
         print("Toto číslo není v zadání")
