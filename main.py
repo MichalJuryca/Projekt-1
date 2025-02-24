@@ -17,7 +17,7 @@
 #    a skončí
 # 8) statistiky - počet slov začínajících velkým písmenem
 #               - počet slov psaných velkými písmeny
-#               - počet slov psaných malými písmeny
+#               - počet slov psaných malými písmeny 
 #               - počet čísel(ne cifer)
 #               - sumu všech čísel(ne cifer) v textu
 
