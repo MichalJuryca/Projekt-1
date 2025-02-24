@@ -101,51 +101,27 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         cisla = [int(slovo) for slovo in slova if slovo.isdigit() and slovo != "30"] #Comprenhenze zápis. Dále vynechání (nepravda != "30") do součtu všech čísel v odstavci.
         print(f"Z toho je:            {sum(cisla)} součet čísel ve vybraném odstavci.")
     print(čára)
-        
-        
-            
 
-        
-            
-                    
+    cisty_odstavec = vybrany_odstavec.replace(',', '').replace('.', '').replace("US", "US").replace("30", "_30")
+    slova = cisty_odstavec.split() # Rozdelenie textu na slova
+    delky_slov = [len(slovo) for slovo in slova]
 
+    kategorie = {}
+    for delka in delky_slov:
+        if delka not in kategorie:
+            kategorie[delka] = 0
+        kategorie[delka] += 1
 
+print("\n| LEN | OCCURENCES  | NR.")
+print(čára)
+for delka in sorted(kategorie.keys()):
+    hvezdicky = '*' * kategorie[delka]
+    print(f"| {delka:<3} | {hvezdicky:<12} | {kategorie[delka]}")
 
+   
+# else:
+#     print("Neplatné jméno nebo heslo.")
 
-
-# odstavec1 = TEXTS[0] 
-    # odstavec2 = TEXTS[1] 
-    # odstavec3 = TEXTS[2] 
-    # TEXTS = 0
-    # if TEXTS == 0:
-    #     TEXTS = 1
-    # elif TEXTS == 1:
-    #     TEXTS = 2
-    # elif TEXTS == 2:
-    #     TEXTS = 3
-
-    # číslo = int(input("Který odstavec ze 3 si přejete analyzovat? Zadej číslo od 1 do 3\n"))
-    # if číslo == 1:
-    #     print(odstavec1) #tady budu dávat další kod, který bude tisknout statistiky.
-    # elif číslo == 2:
-    #     print(odstavec2)
-    # elif číslo == 3:
-    #     print(odstavec3)
-    # else:
-    #     print("Toto číslo není v zadání")
-
-
-    
-    
-
-
-    
-
-        
-        
-else:
-    print("Neplatné jméno nebo heslo.")
-    # Zde musí následovat kod se špatně zadanýma informacema. 
 
 
 
