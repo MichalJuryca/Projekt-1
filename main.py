@@ -97,12 +97,17 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
                 pocet_isdigit_cisel += 1
             elif slovo == "US" and vybrany_odstavec.split()[vybrany_odstavec.split().index(slovo) + 1] == "30": #Tento řádek kódu kontroluje, zda je aktuální slovo "US" a zda je následující slovo "30". Pokud ano, znamená to, že se v textu nachází "US 30".
                 print("Z toho je:           ", pocet_isdigit_cisel, "čísel.")
-                
+        slova = vybrany_odstavec.split()
+        cisla = [int(slovo) for i, slovo in enumerate(slova) if slovo.isdigit() and not (i > 0 and slova[i-1] == "US" and slovo == "30")]
+        print(f"Z toho je:            {sum(cisla)} součet čísel ve vybraném odstavci.")
+        
+        
+            
 
         
+            
+                    
         
-        
-                
         
 
 
