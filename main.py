@@ -100,6 +100,7 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         slova = vybrany_odstavec.split()
         cisla = [int(slovo) for i, slovo in enumerate(slova) if slovo.isdigit() and not (i > 0 and slova[i-1] == "US" and slovo == "30")]
         print(f"Z toho je:            {sum(cisla)} součet čísel ve vybraném odstavci.")
+    print(čára)
         
         
             
@@ -107,12 +108,11 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:   #tzn.pokud v
         
             
                     
-        
-        
 
 
-    else:
-        print("Toto číslo není v zadání")
+
+
+
 # odstavec1 = TEXTS[0] 
     # odstavec2 = TEXTS[1] 
     # odstavec3 = TEXTS[2] 
