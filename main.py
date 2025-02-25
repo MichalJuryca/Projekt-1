@@ -54,11 +54,11 @@ TEXTS = [  # datový typ list(multi line string se třemi jednoduchými uvozovka
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
-cara = "-" * 75  # Odstraněny závorky
+cara = "-" * 75  #nemusí být závorky
 print(cara)
 print("Vítejte v programu textový analyzátor, zadejte přihlašovací jméno a heslo")
 print(cara)
-users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
+users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"} #nakonec použitý klíč a hodnota
 zadane_jmeno = input("Zadejte jméno: ")
 zadane_heslo = input("Zadejte heslo: ")
 
