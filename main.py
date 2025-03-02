@@ -27,7 +27,9 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Michal Juryca
 email: adruj@seznam.cz
 """
-TEXTS = [  # datový typ list(multi line string se třemi jednoduchými uvozovkami. Je tedy již rozdělený.)
+import sys
+
+TEXTS = [
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
     topographic feature that rises sharply
@@ -54,58 +56,53 @@ TEXTS = [  # datový typ list(multi line string se třemi jednoduchými uvozovka
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
-cara = "-" * 75  #nemusí být závorky
+cara = "-" * 75
 print(cara)
 print("Vítejte v programu textový analyzátor, zadejte přihlašovací jméno a heslo")
 print(cara)
-users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"} #nakonec použitý klíč a hodnota
+users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 zadane_jmeno = input("Zadejte jméno: ")
 zadane_heslo = input("Zadejte heslo: ")
 
 if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:
-    print("Vítej v aplikaci, ", zadane_jmeno.capitalize(), "!")
+    print("Vítej v aplikaci", zadane_jmeno.capitalize(), "!")
     print(cara)
     cislo_vstup = input("Který odstavec ze 3 si přejete analyzovat? Zadejte číslo od 1 do 3.\n")
     print(cara)
-    if cislo_vstup.isdigit():  # Kontrola, zda je vstup číselný
+    if cislo_vstup.isdigit():
         cislo = int(cislo_vstup)
         if 1 <= cislo <= 3:
-            vybrany_odstavec = TEXTS[cislo - 1]  # ověření počtu slov v odstavci
+            vybrany_odstavec = TEXTS[cislo - 1]
             pocet_slov = len(vybrany_odstavec.split())
-            print("Ve vybraném textu je:           ", pocet_slov, "slov.")
+            print(f"There are {pocet_slov} words in the selected text.")
 
-            pocet_titlecase_slov = 0  # ověření Velké počáteční písmeno v odstavci
+            pocet_titlecase_slov = 0
+            pocet_upercase_slov = 0
+            pocet_lowercase_slov = 0
+
             for slovo in vybrany_odstavec.split():
-                if slovo[0].isupper():
+                if slovo and slovo[0].isupper() and slovo != "US":
                     pocet_titlecase_slov += 1
-            print("Z toho je:                      ", pocet_titlecase_slov, "slov s prvním velkým písmenem.")
-            pocet_upercase_slov = 0  # ověření VELKÝCH slov v odstavci
-            for slovo in vybrany_odstavec.split():
                 if slovo.isupper() and slovo.isalpha():
                     pocet_upercase_slov += 1
-            print("Z toho je:                      ", pocet_upercase_slov, "slov s velkými slovy.")
-            pocet_lowercase_slov = 0  # ověření jen malých písmen
-            for slovo in vybrany_odstavec.split():
-                if slovo.islower():  # and slovo.isalpha(): #zatextováno, počítalo i číslice.
+                if slovo.islower():
                     pocet_lowercase_slov += 1
-            print("Z toho je:                      ", pocet_lowercase_slov, "slov s malými písmeny.")
-            pocet_isdigit_cisel = 0  # ověření počtu cifer v odstavci
-            for slovo in vybrany_odstavec.split():
-                if slovo.isdigit():
-                    pocet_isdigit_cisel += 1
-                elif slovo == "US" and vybrany_odstavec.split()[
-                    vybrany_odstavec.split().index(slovo) + 1] == "30":  # Tento řádek kódu kontroluje, zda je aktuální slovo "US" a zda je následující slovo "30". Pokud ano, znamená to, že se v textu nachází "US 30".
-                    print("Z toho je:                      ", pocet_isdigit_cisel, "čísel.")
-            slova = vybrany_odstavec.split()  # rozdělení odstavce a uložení do proměnné slova
-            cisla = [int(slovo) for slovo in slova if
-                     slovo.isdigit() and slovo != "30"]  # Comprenhenze zápis. Dále vynechání (nepravda != "30") do součtu všech čísel v odstavci.
-            print(f"Z toho je:                    {sum(cisla)} součet čísel ve vybraném odstavci.")
+
+            print(f"There are {pocet_titlecase_slov} titlecase words.")
+            print(f"There are {pocet_upercase_slov} uppercase words.")
+            print(f"There are {pocet_lowercase_slov} lowercase words.")
+
+            pocet_isdigit_cisel = 0
+            slova = vybrany_odstavec.split()
+            cisla = [int(slovo) for slovo in slova if slovo.isdigit()]
+            pocet_isdigit_cisel = len(cisla)
+            print(f"There are {pocet_isdigit_cisel} numeric strings.")
+            print(f"The sum of all the numbers {sum(cisla)}")
             print(cara)
 
-            cisty_odstavec = vybrany_odstavec.replace(',', '').replace('.', '').replace("US", "US").replace("30","_30")
-                                                                                                                
+            cisty_odstavec = vybrany_odstavec.replace(',', '').replace('.', '')
 
-            slova = cisty_odstavec.split()  # Rozdelenie textu na slova
+            slova = cisty_odstavec.split()
             delky_slov = [len(slovo) for slovo in slova]
 
             kategorie = {}
@@ -114,18 +111,21 @@ if zadane_jmeno in users and users[zadane_jmeno] == zadane_heslo:
                     kategorie[delka] = 0
                 kategorie[delka] += 1
 
-            print("\n| LEN |     OCCURENCES          | NR.")
+            print("\nLEN| OCCURENCES        |NR.")
             print(cara)
             for delka in sorted(kategorie.keys()):
                 hvezdicky = '*' * kategorie[delka]
-                print(f"| {delka:<3} | {hvezdicky:<20}    | {kategorie[delka]}")
+                print(f"{delka:<3}| {hvezdicky:<17} |{kategorie[delka]}")
 
         else:
-            print("Neplatné číslo odstavce")
+            print("Invalid paragraph number")
+            sys.exit()
     else:
-        print("Neplatný vstup. Zadejte prosím číslo")
+        print("Invalid input. Please enter a number")
+        sys.exit()
 else:
-    print("neregistrovaný uživatel, ukončení programu..")
+    print("unregistered user, terminating the program..")
+    sys.exit()
 
 
 
