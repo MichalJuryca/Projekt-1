@@ -19,7 +19,7 @@
 #               - počet slov psaných velkými písmeny
 #               - počet slov psaných malými písmeny 
 #               - počet čísel(ne cifer)
-#               - sumu všech čísel(ne cifer) v textu.
+#               - sumu všech čísel(ne cifer) v textu..
 
 """
 projekt_1.py: první projekt do Engeto Online Python Akademie
